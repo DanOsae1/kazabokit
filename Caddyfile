@@ -1,0 +1,36 @@
+# Development mode - listen on all addresses
+:80 {
+    root * /usr/share/caddy
+    try_files {path} /index.html
+    file_server
+    encode gzip
+    
+    # Basic headers
+    header {
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "no-referrer-when-downgrade"
+    }
+    
+    # Log requests to help with debugging
+    log {
+        output stdout
+    }
+}
+
+# Domain-specific config
+www.kazabokit.com {
+    root * /usr/share/caddy
+    try_files {path} /index.html
+    file_server
+    encode gzip
+    
+    # Log requests
+    log {
+        output stdout
+    }
+}
+
+# Apex domain redirect
+kazabokit.com {
+    redir https://www.kazabokit.com{uri} permanent
+}
