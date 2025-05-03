@@ -32,7 +32,7 @@ const Footer = () => {
             &copy; {currentYear} Kaz A Bokit. All rights reserved.
           </p>
           <p className="flex justify-center items-center gap-1">
-            Made with <Heart size={16} className="text-caribbean-orange" /> in the UK
+            Osaebros ltd &copy; {currentYear}
           </p>
         </div>
       </div>
