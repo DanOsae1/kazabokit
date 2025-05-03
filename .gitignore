@@ -25,3 +25,8 @@ dist-ssr
 
 #Secrets
 .env
+
+#Infra 
+.terraform*
+# Local Netlify folder
+.netlify

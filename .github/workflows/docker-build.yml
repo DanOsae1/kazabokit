@@ -8,7 +8,7 @@ on:
 
   workflow_dispatch:
 env:
-  PROJECT_ID: kazabokit
+  project_id: kazabokit
   SERVICE_NAME: kazabokit-web
   REGION: europe-west2
   DOCKER_REPO: ${{ secrets.DOCKERHUB_REPO }}
