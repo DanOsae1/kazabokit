@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import kazabokitLogo from "@/assets/kazalogotransp.png";
+import { getImageUrl } from "@/utils/getImageUrlUtil/GetImageUrl";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +22,28 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Menu", href: "#menu" },
-    { name: "Events", href: "#events" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
+    { name: "Menu", href: "/#menu" },
+    { name: "Events", href: "/#events" },
+    { name: "Contact", href: "/contact" },
   ];
+
+  const finalNavLinks = navLinks.map((link) => {
+    if (link.name.match("Contact")) {
+      return (
+        <Link key={link.name} to={link.href} className="nav-link">
+          {link.name}
+        </Link>
+      );
+    } else {
+      return (
+        <a key={link.name} href={link.href} className="nav-link">
+          {link.name}
+        </a>
+      );
+    }
+  });
 
   return (
     <nav
@@ -36,6 +55,13 @@ const Navbar = () => {
     >
       <div className="container-custom flex justify-between items-center">
         <a href="#home" className="flex items-center">
+          {" "}
+          <img
+            src={getImageUrl(kazabokitLogo)}
+            alt="KazA Bokit Logo"
+            className="h-10 w-auto mr-3"
+            loading="lazy"
+          />
           <h1 className="text-2xl md:text-3xl font-display font-bold">
             <span className="text-caribbean-orange">Kaz</span>
             <span className="text-caribbean-black">A</span>
@@ -45,11 +71,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="nav-link">
-              {link.name}
-            </a>
-          ))}
+          {finalNavLinks}
         </div>
 
         {/* Mobile Navigation Button */}
@@ -66,16 +88,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg animate-fade-in">
           <div className="container-custom py-4 flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="nav-link block py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
+            {finalNavLinks}
           </div>
         </div>
       )}

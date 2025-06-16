@@ -1,25 +1,30 @@
-import MenuCard from '../menuCard/MenuCard';
+import MenuCard from "../menuCard/MenuCard";
+import Gallery from "../gallery/Gallery";
 
 const Menu = () => {
   const menuItems = [
     {
       title: "Traditional Bokit",
-      description: "Deep-fried dough filled with traditional Caribbean ingredients including chicken, pork or fish with fresh vegetables and spices.",
+      description:
+        "Deep-fried dough filled with traditional Caribbean ingredients including chicken, pork or fish with fresh vegetables and spices.",
       imageUrl: "",
     },
     {
       title: "Agoulou",
-      description: "A delicious brioche-like bread filled with meats such as sausages, mince, or chicken, topped with cheese and special sauces, grilled like a panini.",
+      description:
+        "A delicious brioche-like bread filled with meats such as sausages, mince, or chicken, topped with cheese and special sauces, grilled like a panini.",
       imageUrl: "",
     },
     {
       title: "Trio Bokits",
-      description: "Three different mini bokits in one serving, allowing customers to explore a range of flavors without having to choose just one.",
+      description:
+        "Three different mini bokits in one serving, allowing customers to explore a range of flavors without having to choose just one.",
       imageUrl: "",
     },
     {
       title: "Petit Bokit",
-      description: "Smaller versions of traditional bokits, perfect for those looking for a lighter snack or wanting to sample multiple flavors.",
+      description:
+        "Smaller versions of traditional bokits, perfect for those looking for a lighter snack or wanting to sample multiple flavors.",
       imageUrl: "",
     },
   ];
@@ -27,19 +32,26 @@ const Menu = () => {
   return (
     <section id="menu" className="py-20 bg-white relative">
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-caribbean-white to-transparent"></div>
-      
-      <div className="container-custom">
+
+      <div className="container-custom mx-auto">
         <div className="text-center mb-16">
           <span className="section-subtitle">Taste the Caribbean</span>
-          <h2 className="section-title text-center after:left-1/4 after:w-1/2">Our Menu</h2>
+          <h2 className="section-title text-center after:left-1/4 after:w-1/2">
+            Our Menu
+          </h2>
           <p className="mt-6 max-w-2xl mx-auto">
-            Discover the authentic flavors of Guadeloupe with our selection of traditional bokits and agoulou. Each item is prepared with love using authentic recipes and fresh ingredients.
+            Discover the authentic flavors of Guadeloupe with our selection of
+            traditional bokits and agoulou. Each item is prepared with love
+            using authentic recipes and fresh ingredients.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex justify-center">
+          <Gallery />
+        </div>
+
+        <div className="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
           {menuItems.map((item, index) => (
-            <MenuCard 
+            <MenuCard
               key={index}
               title={item.title}
               description={item.description}
@@ -48,7 +60,7 @@ const Menu = () => {
             />
           ))}
         </div>
-        
+
         <div className="mt-16 text-center animate-fade-in-up">
           <p className="text-lg font-medium mb-8">
             Want to see more of our delicious offerings?

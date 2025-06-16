@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
-import KazABokit from "@/assets/KazABokit-Transparent.png"
+import KazABokit from "@/assets/kazabokit_label.png";
+import { getImageUrl } from "@/utils/getImageUrlUtil/GetImageUrl";
 
 const Hero = () => {
   return (
@@ -8,7 +9,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center pt-16 pb-20 overflow-hidden bg-caribbean-white"
     >
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-caribbean-orange/20 to-caribbean-yellow/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-caribbean-orange/20 to-caribbean-yellow/20" />
       </div>
 
       <div className="container-custom relative z-10 grid md:grid-cols-2 gap-8 items-center">
@@ -42,7 +43,7 @@ const Hero = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-caribbean-yellow/20 rounded-full blur-xl"></div>
             <img
-              src={KazABokit}
+              src={getImageUrl(KazABokit)}
               alt="Kaz A Bokit Logo"
               className="w-full h-full max-w-2xl relative z-10 drop-shadow-2xl"
             />

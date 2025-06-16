@@ -1,6 +1,5 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "sonner";
 
 const useNewsLetterForm = () => {
   const [contact, setContact] = useState({

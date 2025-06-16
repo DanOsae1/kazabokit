@@ -1,6 +1,5 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "sonner";
 
 const useContactForm = () => {
   const [formData, setFormData] = useState({
@@ -35,9 +34,7 @@ const useContactForm = () => {
 
   const handleSubmit = async (formRef) => {
     if (!validate()) {
-      console.log({ ...errors });
       toast.error("Cannot send message containing invalid characters ...");
-      console.log("invalid");
       return;
     }
     setIsSending(true);
@@ -49,11 +46,9 @@ const useContactForm = () => {
         { publicKey: import.meta.env.VITE_EMAILJS_PUBLICKEY }
       )
       .then((res) => {
-        console.log(res);
         setIsSuccessful("We aim to get back to you within 3 working days");
       })
       .catch((err) => {
-        console.log(err);
         toast.error("Could not send email");
       })
       .finally(setIsSending(false));
