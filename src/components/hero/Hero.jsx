@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
-import KazABokit from "@/assets/KazABokit-Transparent.png"
+import KazABokit from "@/assets/kazabokit-fcsf.png";
+import { getImageUrl } from "@/utils/getImageUrlUtil/GetImageUrl";
 
 const Hero = () => {
   return (
@@ -42,7 +43,7 @@ const Hero = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-caribbean-yellow/20 rounded-full blur-xl"></div>
             <img
-              src={KazABokit}
+              src={getImageUrl(KazABokit)}
               alt="Kaz A Bokit Logo"
               className="w-full h-full max-w-2xl relative z-10 drop-shadow-2xl"
             />

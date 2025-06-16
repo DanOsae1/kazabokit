@@ -1,6 +1,5 @@
 import { useState,useRef } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
-import { toast } from "sonner";
 import useNewsLetterForm from '../../hooks/emailHook/useNewsLetter';
 
 const Newsletter = () => {

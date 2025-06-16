@@ -1,5 +1,6 @@
 import foodItems from "@/assets/fooditems.jpg"
 import { Award, Users, Utensils } from 'lucide-react';
+import { getImageUrl } from "@/utils/getImageUrlUtil/GetImageUrl";
 
 const AboutUs = () => {
   return (
@@ -74,7 +75,7 @@ const AboutUs = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-caribbean-orange/10 rounded-2xl blur-xl"></div>
               <img
-                src={foodItems}
+                src={getImageUrl(foodItems)}
                 alt="Kaz A Bokit Food Spread"
                 className="rounded-2xl shadow-2xl relative z-10 w-full h-full max-w-2xl object-cover"
               />

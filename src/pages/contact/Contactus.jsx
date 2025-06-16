@@ -1,7 +1,7 @@
-import { Mail, Phone, Instagram, Facebook } from "lucide-react";
+import { Mail,Phone } from "lucide-react";
+import Socials from "../../components/socials/Socials";
 import { useRef } from "react";
 import useContactForm from "../../hooks/emailHook/useContactFrom";
-
 
 const Contact = () => {
   const formRef = useRef();
@@ -69,52 +69,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-caribbean-orange/10">
-                <h3 className="font-medium mb-4">Follow Us</h3>
-                <div className="flex gap-4">
-                  <a
-                    href="https://www.instagram.com/Kaza.bokituk/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-caribbean-orange text-white flex items-center justify-center hover:bg-caribbean-yellow transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <Instagram size={20} />
-                  </a>
-                  <a
-                    href="https://www.facebook.com/KazAbokit/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-caribbean-orange text-white flex items-center justify-center hover:bg-caribbean-yellow transition-colors"
-                    aria-label="Facebook"
-                  >
-                    <Facebook size={20} />
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@Kazabokituk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-caribbean-orange text-white flex items-center justify-center hover:bg-caribbean-yellow transition-colors"
-                    aria-label="TikTok"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
-                      <path d="M16 8v4a4 4 0 0 1-4 4"></path>
-                      <path d="M8.5 9.5 6 11V6.5a2 2 0 0 1 2-2h.5L12 2h2v10.5"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
+              <Socials />
             </div>
           </div>
 

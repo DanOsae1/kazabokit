@@ -3,14 +3,13 @@ import { useState } from "react";
 import placeholderImageUrl from "@/assets/Mockup.jpg";
 
 const VideoSection = () => {
-  const [videoUrl, setVideoUrl] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlayVideo = () => {
-    // Replace this with your actual video URL
-    setVideoUrl("https://kazabokit.biz/wp-content/uploads/2024/08/Video.mp4");
     setIsPlaying(true);
   };
+
+  const videoUrl = import.meta.env.VITE_MUX_VIDEO_URL;
 
   return (
     <section className="py-20 bg-section-gradient">
@@ -24,15 +23,17 @@ const VideoSection = () => {
 
         <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
           <div className="aspect-w-16 aspect-h-9 bg-caribbean-black">
-            {isPlaying && videoUrl ? (
+            {isPlaying ? (
               <div className="relative w-full h-0 pt-[56.25%]">
                 <iframe
                   src={videoUrl}
                   title="Kaz A Bokit Promotional Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  loading="lazy"
                   allowFullScreen
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{ border: "none" }}
-                ></iframe>
+                />
               </div>
             ) : (
               <div className="relative w-full h-0 pt-[56.25%]">
@@ -52,8 +53,7 @@ const VideoSection = () => {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
                   <p className="text-white text-lg font-medium">
-                    Video coming soon! Check back later for our promotional
-                    video.
+                    Check out our promotional video.
                   </p>
                 </div>
               </div>
