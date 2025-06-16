@@ -39,10 +39,8 @@ const images = [
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
+    src: `${image}?w=${size * cols}&h=${size * rows}`,
+    srcSet: `${image}?w=${size * cols}&h=${size * rows}`,
   };
 }
 
@@ -54,6 +52,7 @@ const Gallery = () => {
     setSelectedImage({ img, title });
     setOpen(true);
   };
+
   const handleClose = () => {
     setOpen(false);
     setSelectedImage(null);
