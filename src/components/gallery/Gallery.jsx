@@ -32,7 +32,6 @@ const images = [
   { img: sizes, title: "Sizes", cols: 2 },
   { img: trioBokit, title: "Trio Bokit", cols: 2 },
   { img: veganBokit, title: "Vegetarian Bokit", rows: 2, cols: 2 },
-
   { img: saltfishBokit, title: "Saltfish Bokit", rows: 1, cols: 1 },
   { img: veganPlatter, title: "Vegetarian Platter", rows: 1, cols: 1 },
   { img: leeroyCheese, title: "Hot cheesy beef bokit", rows: 1, cols: 2 },
