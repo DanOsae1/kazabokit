@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import KazABokit from "@/assets/kazabokit-fcsf.png";
+import KazABokit from "@/assets/kazabokit_label.png";
 import { getImageUrl } from "@/utils/getImageUrlUtil/GetImageUrl";
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center pt-16 pb-20 overflow-hidden bg-caribbean-white"
     >
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-caribbean-orange/20 to-caribbean-yellow/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-caribbean-orange/20 to-caribbean-yellow/20" />
       </div>
 
       <div className="container-custom relative z-10 grid md:grid-cols-2 gap-8 items-center">
