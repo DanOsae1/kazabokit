@@ -1,5 +1,9 @@
 import MenuCard from "../menuCard/MenuCard";
-import Gallery from "../gallery/Gallery";
+import { Link } from "react-router-dom";
+import triobokits from "@/assets/triobokit.jpg";
+import sizes from "@/assets/sizes.jpg";
+import saltfish from "@/assets/saltfish-bokit.jpg";
+import vegan from "@/assets/veganbokit.jpg";
 
 const Menu = () => {
   const menuItems = [
@@ -7,25 +11,25 @@ const Menu = () => {
       title: "Traditional Bokit",
       description:
         "Deep-fried dough filled with traditional Caribbean ingredients including chicken, pork or fish with fresh vegetables and spices.",
-      imageUrl: "",
+      imageUrl: saltfish,
     },
     {
       title: "Agoulou",
       description:
         "A delicious brioche-like bread filled with meats such as sausages, mince, or chicken, topped with cheese and special sauces, grilled like a panini.",
-      imageUrl: "",
+      imageUrl: vegan,
     },
     {
       title: "Trio Bokits",
       description:
         "Three different mini bokits in one serving, allowing customers to explore a range of flavors without having to choose just one.",
-      imageUrl: "",
+      imageUrl: sizes,
     },
     {
       title: "Petit Bokit",
       description:
         "Smaller versions of traditional bokits, perfect for those looking for a lighter snack or wanting to sample multiple flavors.",
-      imageUrl: "",
+      imageUrl: triobokits,
     },
   ];
 
@@ -45,9 +49,7 @@ const Menu = () => {
             using authentic recipes and fresh ingredients.
           </p>
         </div>
-        <div className="flex justify-center">
-          <Gallery />
-        </div>
+        <div className="flex justify-center">{/* <Gallery /> */}</div>
 
         <div className="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
           {menuItems.map((item, index) => (
@@ -65,9 +67,9 @@ const Menu = () => {
           <p className="text-lg font-medium mb-8">
             Want to see more of our delicious offerings?
           </p>
-          <a href="#contact" className="btn-primary">
-            Contact Us
-          </a>
+          <Link to="/gallery" className="btn-primary">
+            Gallery
+          </Link>
         </div>
       </div>
     </section>
