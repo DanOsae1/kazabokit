@@ -93,9 +93,9 @@ const Contact = () => {
               )}
               <form
                 ref={formRef}
-                name="contact"
+                name="contact" 
+                netlify
                 method="POST"
-                data-netlify="true"
                 onSubmit={handleSubmitForEnquiry}
                 className="space-y-4"
               >
