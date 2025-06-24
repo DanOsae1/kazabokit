@@ -78,12 +78,24 @@ const Contact = () => {
               <h3 className="font-display text-xl font-bold mb-6">
                 Send Us a Message
               </h3>
+              {/* Feedback messages */}
+              {isSuccessful && (
+                <div className="mb-4 p-3 rounded bg-green-100 text-green-700 border border-green-300">
+                  Thank you! Your message has been sent.
+                </div>
+              )}
+              {errors && (
+                <div className="mb-4 p-3 rounded bg-red-100 text-red-700 border border-red-300">
+                  {typeof errors === "string"
+                    ? errors
+                    : "Sorry, something went wrong. Please try again."}
+                </div>
+              )}
               <form
                 ref={formRef}
                 name="contact"
                 method="POST"
                 data-netlify="true"
-                netlify-honeypot="bot-field"
                 onSubmit={handleSubmitForEnquiry}
                 className="space-y-4"
               >

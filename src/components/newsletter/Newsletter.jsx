@@ -1,12 +1,16 @@
 import { useState,useRef } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
-import useNewsLetterForm from '../../hooks/emailHook/useNewsLetter';
+import useNewsLetterForm from '@/hooks/emailHook/useNewsLetter';
+import { useToast } from "@/components/toast/Toast";
+
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
   const {} = useNewsLetterForm();
+
+  const toast = useToast();
 
   const handleSubmit = (e) => {
     e.preventDefault();

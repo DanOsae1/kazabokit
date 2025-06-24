@@ -1,5 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useToast } from "@/components/toast/Toast";
 
 const useContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const useContactForm = () => {
   const [errors, setErrors] = useState(null);
   const [isSending, setIsSending] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
+
+  const toast = useToast();
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -51,7 +54,10 @@ const useContactForm = () => {
       .catch((err) => {
         toast.error("Could not send email");
       })
-      .finally(setIsSending(false));
+      .finally(() => {
+        setIsSending(false);
+        setErrors(null);
+      });
   };
 
   return {
