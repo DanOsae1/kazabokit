@@ -7,7 +7,7 @@ const EventsSection = () => {
     {
       id: 1,
       title: "Hackeny Food Market",
-      date: "June 19, 2025",
+      date: "Every Thursday & Friday",
       time: "11:00 PM - 8:00 PM",
       location: "Narrow Way, Mare Street, London",
       description:
@@ -15,12 +15,12 @@ const EventsSection = () => {
     },
     {
       id: 2,
-      title: "Hackeny Food Market",
-      date: "June 20, 2025",
+      title: "Maud",
+      date: "Every Saturday",
       time: "11:00 PM - 8:00 PM",
-      location: "Narrow Way, Mare Street, London",
+      location: "Plaistow, London",
       description:
-        "Join us every Thursdays and Fridays for a taste of our delicious Caribbean cuisine, music, and culture at the annual Hackney Food Market.",
+        "Join us every on Saturdays for a taste of our delicious Caribbean cuisine.",
     },
   ]);
 

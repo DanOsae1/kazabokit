@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import kazabokitLogo from "@/assets/kazalogotransp.png";
-import { getImageUrl } from "@/utils/getImageUrlUtil/GetImageUrl";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

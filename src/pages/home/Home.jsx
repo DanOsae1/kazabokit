@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import Hero from "@/components/hero/Hero.jsx";
-import AboutUs from "@/pages/aboutus/Aboutus";
 import Menu from "@/components/menu/Menu";
 import VideoSection from "@/components/video/VideoSection";
 import EventsSection from "@/components/events/EventsSection";
+import AboutUsSection from "@/components/aboutus/AboutUsSection";
 
 const Home = () => { 
   useEffect(() => {
@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <AboutUs />
+      <AboutUsSection />
       <Menu />
       <VideoSection />
       <EventsSection />

@@ -1,6 +1,5 @@
 import { ChevronDown } from "lucide-react";
 import KazABokit from "@/assets/kazabokit_label.png";
-import { getImageUrl } from "@/utils/getImageUrlUtil/GetImageUrl";
 
 const Hero = () => {
   return (
@@ -30,6 +29,7 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-in">
+            
             <a href="#menu" className="btn-primary">
               View Our Menu
             </a>
@@ -43,7 +43,7 @@ const Hero = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-caribbean-yellow/20 rounded-full blur-xl"></div>
             <img
-              src={getImageUrl(KazABokit)}
+              src={KazABokit}
               alt="Kaz A Bokit Logo"
               className="w-full h-full max-w-2xl relative z-10 drop-shadow-2xl"
             />

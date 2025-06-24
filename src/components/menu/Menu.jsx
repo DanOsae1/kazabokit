@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import triobokits from "@/assets/triobokit.jpg";
 import sizes from "@/assets/sizes.jpg";
 import saltfish from "@/assets/saltfish-bokit.jpg";
-import vegan from "@/assets/veganbokit.jpg";
+import chickenwings from "@/assets/chickenwings.jpg";
 
 const Menu = () => {
   const menuItems = [
@@ -14,10 +14,10 @@ const Menu = () => {
       imageUrl: saltfish,
     },
     {
-      title: "Agoulou",
+      title: "Tasty Wings",
       description:
-        "A delicious brioche-like bread filled with meats such as sausages, mince, or chicken, topped with cheese and special sauces, grilled like a panini.",
-      imageUrl: vegan,
+        "Grilled chicken wings tossed in our signature sweet and spicy sauce, delivering the perfect balance of heat and flavor.",
+      imageUrl: chickenwings,
     },
     {
       title: "Trio Bokits",
@@ -45,8 +45,8 @@ const Menu = () => {
           </h2>
           <p className="mt-6 max-w-2xl mx-auto">
             Discover the authentic flavors of Guadeloupe with our selection of
-            traditional bokits and agoulou. Each item is prepared with love
-            using authentic recipes and fresh ingredients.
+            traditional bokits. Each item is prepared with love using authentic
+            recipes and fresh ingredients.
           </p>
         </div>
         <div className="flex justify-center">{/* <Gallery /> */}</div>
@@ -68,7 +68,7 @@ const Menu = () => {
             Want to see more of our delicious offerings?
           </p>
           <Link to="/gallery" className="btn-primary">
-            Gallery
+            See More
           </Link>
         </div>
       </div>
