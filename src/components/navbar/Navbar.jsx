@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import kazabokitLogo from "@/assets/kazalogotransp.png";
-import { getImageUrl } from "@/utils/getImageUrlUtil/GetImageUrl";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,27 +22,14 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/#about" },
-    { name: "Menu", href: "/#menu" },
-    { name: "Events", href: "/#events" },
-    { name: "Contact", href: "/contact" },
-  ];
-
-  const finalNavLinks = navLinks.map((link) => {
-    if (link.name.match("Contact")) {
-      return (
-        <Link key={link.name} to={link.href} className="nav-link">
-          {link.name}
-        </Link>
-      );
-    } else {
-      return (
-        <a key={link.name} href={link.href} className="nav-link">
-          {link.name}
-        </a>
-      );
-    }
-  });
+    { name: "Gallery", href: "/gallery" },
+    { name: "About", href: "/about" },
+    { name: "Contact Us", href: "/contact" },
+  ].map((l) => (
+    <Link key={l.name} to={l.href} className="nav-link">
+      {l.name}
+    </Link>
+  ));
 
   return (
     <nav
@@ -57,7 +43,7 @@ const Navbar = () => {
         <a href="#home" className="flex items-center">
           {" "}
           <img
-            src={getImageUrl(kazabokitLogo)}
+            src={kazabokitLogo}
             alt="KazA Bokit Logo"
             className="h-10 w-auto mr-3"
             loading="lazy"
@@ -70,9 +56,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          {finalNavLinks}
-        </div>
+        <div className="hidden md:flex items-center space-x-8">{navLinks}</div>
 
         {/* Mobile Navigation Button */}
         <button
@@ -88,7 +72,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg animate-fade-in">
           <div className="container-custom py-4 flex flex-col space-y-4">
-            {finalNavLinks}
+            {navLinks}
           </div>
         </div>
       )}

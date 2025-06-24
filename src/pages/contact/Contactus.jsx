@@ -1,4 +1,4 @@
-import { Mail,Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Socials from "../../components/socials/Socials";
 import { useRef } from "react";
 import useContactForm from "../../hooks/emailHook/useContactFrom";
@@ -78,11 +78,30 @@ const Contact = () => {
               <h3 className="font-display text-xl font-bold mb-6">
                 Send Us a Message
               </h3>
+              {/* Feedback messages */}
+              {isSuccessful && (
+                <div className="mb-4 p-3 rounded bg-green-100 text-green-700 border border-green-300">
+                  Thank you! Your message has been sent.
+                </div>
+              )}
+              {errors && (
+                <div className="mb-4 p-3 rounded bg-red-100 text-red-700 border border-red-300">
+                  {typeof errors === "string"
+                    ? errors
+                    : "Sorry, something went wrong. Please try again."}
+                </div>
+              )}
               <form
                 ref={formRef}
+                name="contact"
+                method="POST"
+                data-netlify="true"
                 onSubmit={handleSubmitForEnquiry}
                 className="space-y-4"
               >
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label
@@ -94,6 +113,7 @@ const Contact = () => {
                     <input
                       type="text"
                       id="name"
+                      name="name"
                       onChange={handleChange}
                       value={formData.name}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-caribbean-orange/50"
@@ -110,6 +130,7 @@ const Contact = () => {
                     <input
                       type="email"
                       id="email"
+                      name="email"
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-caribbean-orange/50"
@@ -129,6 +150,7 @@ const Contact = () => {
                     onChange={handleChange}
                     type="text"
                     id="subject"
+                    name="subject"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-caribbean-orange/50"
                     placeholder="Subject"
                   />
@@ -144,6 +166,7 @@ const Contact = () => {
                     onChange={handleChange}
                     value={formData.message}
                     id="message"
+                    name="message"
                     rows={5}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-caribbean-orange/50"
                     placeholder="Your message"
@@ -153,17 +176,9 @@ const Contact = () => {
                 <button
                   type="submit"
                   className="btn-primary w-full"
-                  // onClick={(e) => {
-                  //   e.preventDefault();
-                  //   toast.success(
-                  //     "Your message has been sent! We'll get back to you soon."
-                  //   );
-                  // }}
                   disabled={isSending}
                 >
                   {isSending ? "Sending..." : "Send"}
-                  {/* {isSuccessful && <p style={{ color: "green" }}>{success}</p>}
-                  {errors && <p style={{ color: "red" }}>{errors}</p>} */}
                 </button>
               </form>
             </div>

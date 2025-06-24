@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="text-caribbean-orange">Bokit</span>
             </h2>
             <p className="mt-2 text-white/70">French Caribbean Street Food</p>
-            
+
             <div className="mt-4 grid grid-cols-3 gap-3">
               <Socials />
             </div>
@@ -51,6 +51,12 @@ const Footer = () => {
               className="text-white/80 hover:text-caribbean-orange transition-colors"
             >
               Contact
+            </Link>
+            <Link
+              to="/privacy-policy"
+              className="text-white/80 hover:text-caribbean-orange transition-colors"
+            >
+              Privacy Policy
             </Link>
           </div>
         </div>

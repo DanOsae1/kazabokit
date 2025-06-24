@@ -1,12 +1,5 @@
 import { useState } from 'react';
 
-// interface MenuCardProps {
-//   title: string;
-//   description: string;
-//   imageUrl?: string;
-//   delay: number;
-// }
-
 const MenuCard = ({ title, description, imageUrl, delay }) => {
   const [isHovered, setIsHovered] = useState(false);
   
